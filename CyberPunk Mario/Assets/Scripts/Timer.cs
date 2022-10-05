@@ -11,10 +11,10 @@ public class Timer : MonoBehaviour
     public bool cdTimeRunning = false;
     public TextMeshProUGUI cdTimeText;
 
-    [Header("Count Up Timer")]
-    public bool countUpTimeRunning = false;
-    public float countUpTime = 0;
-    public TextMeshProUGUI countUpTimeText;
+    //[Header("Count Up Timer")]
+   //// public bool countUpTimeRunning = false;
+   // public float countUpTime = 0;
+   // public TextMeshProUGUI countUpTimeText;
 
     private void Start()
     {  
@@ -23,8 +23,8 @@ public class Timer : MonoBehaviour
 
 
         
-        countUpTimeRunning = true;// Count Up Timer
-        countUpTimeText.text = countUpTime.ToString();// Count Up Timer
+       // countUpTimeRunning = true;// Count Up Timer
+       // countUpTimeText.text = countUpTime.ToString();// Count Up Timer
     }
 
     void Update()
@@ -45,11 +45,12 @@ public class Timer : MonoBehaviour
         }
 
 
-        if (countUpTimeRunning)// Count Up Timer
+        /*if (countUpTimeRunning)// Count Up Timer
         {
                 countUpTime += Time.deltaTime;
                 DisplayCountUpTimer(countUpTime);
         }
+        */
     }
 
     void DisplayCountDownTimer(float timeToDisplay)
@@ -62,7 +63,7 @@ public class Timer : MonoBehaviour
         cdTimeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    void DisplayCountUpTimer(float timeToDisplay)
+    /*void DisplayCountUpTimer(float timeToDisplay)
     {
         timeToDisplay += 1;
 
@@ -71,4 +72,5 @@ public class Timer : MonoBehaviour
 
         countUpTimeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+    */
 }

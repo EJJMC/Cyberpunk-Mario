@@ -10,11 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed = 3.0f; 
     public Rigidbody PlayerRigidbody;
     public LayerMask JumpLayer;
-    public Collider2D playerCollider;
+    public Collider playerCollider;
     public float playerJumpSpeed = 100f;
     //public static int power = 0;
     bool facingRight = true;
     bool Death = true;
+   // public Collider 
    
 
 
@@ -43,10 +44,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            if (!playerCollider.IsTouchingLayers(JumpLayer))
-            {
-                return;
-            }
+            //if (!playerCollider.IsTouchingLayers(JumpLayer))
+            //if(!playerCollider.)
+            //{
+               // return;
+           // }
             Vector3 jumpVelocityToAdd = new Vector3(0f, playerJumpSpeed, 0f);
             PlayerRigidbody.velocity += jumpVelocityToAdd;
         }

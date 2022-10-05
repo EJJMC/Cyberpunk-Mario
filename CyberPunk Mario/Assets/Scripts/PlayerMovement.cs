@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float playerSpeed = 3.0f; 
-    public Rigidbody2D PlayerRigidbody;
+    public Rigidbody PlayerRigidbody;
     public LayerMask JumpLayer;
     public Collider2D playerCollider;
     public float playerJumpSpeed = 100f;
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        PlayerRigidbody = GetComponent<Rigidbody2D>();
+        PlayerRigidbody = GetComponent<Rigidbody>();
         //power = 0;
         Death = false;
     }
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
-            Vector2 jumpVelocityToAdd = new Vector2(0f, playerJumpSpeed);
+            Vector3 jumpVelocityToAdd = new Vector3(0f, playerJumpSpeed, 0f);
             PlayerRigidbody.velocity += jumpVelocityToAdd;
         }
     }
@@ -58,20 +58,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    void OnTriggerEnter2D(Collider2D Collision)
-    {
-       // if (Collision.gameObject.tag == "Enemy")
-       // {
-          //  playerHealth--;
-        //}
-
-        //Power ups
-       // if (Collision.tag == "PlayerPowerUps")
-        //{
-           // power++;
-
-        //}
-    }
+    
 
     void PlayerDie()
     {

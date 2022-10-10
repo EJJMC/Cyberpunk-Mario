@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     //player health bar
-    public int playerMaxHealth = 3;
+    /*public int playerMaxHealth = 3;
     public int playerCurrentHealth;
     public PlayerHealthBar healthBar;
-
+    */
     //player hearts
     public int playerHealth;
     public int playerNumberOfHearts;
@@ -19,8 +19,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void Start()//all code related to player health bar
     {
-        playerCurrentHealth = playerMaxHealth;
-        healthBar.PlayerMaxHealth(playerMaxHealth);
+       // playerCurrentHealth = playerMaxHealth;
+        //healthBar.PlayerMaxHealth(playerMaxHealth);
     }
     private void Update()//all code in update related to player hearts
     {
@@ -51,25 +51,25 @@ public class PlayerHealth : MonoBehaviour
         } 
     }
     
-    public void OnCollisionEnter2D(Collision2D Collision)
+    public void OnCollisionEnter(Collision Collision)
     {
         if (Collision.gameObject.tag == "Enemy")
         {
-            playerCurrentHealth--;//player healthbar
+           // playerCurrentHealth--;//player healthbar
             playerHealth--;//player hearts
-            healthBar.SetPlayerHealth(playerCurrentHealth);
+           // healthBar.SetPlayerHealth(playerCurrentHealth);
         }
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "DeathZone")
         {
             
-            playerCurrentHealth-=3;//player healthbar
-            playerHealth-=3;//player hearts
-            healthBar.SetPlayerHealth(playerCurrentHealth);
+            //playerCurrentHealth-=3;//player healthbar
+            playerHealth-=7;//player hearts
+            //healthBar.SetPlayerHealth(playerCurrentHealth);
             
         }
     }

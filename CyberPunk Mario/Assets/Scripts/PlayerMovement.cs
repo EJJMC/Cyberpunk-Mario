@@ -9,8 +9,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float playerSpeed = 3.0f; 
     public Rigidbody PlayerRigidbody;
-    public LayerMask JumpLayer;
-    public Collider playerCollider;
+    public LayerMask JumpLayer; // need this is player scrfipt tommorrow
+    public Transform groundCheck;// need this
+    public float groundDistance = 0.4f;//need this
+    bool isGrounded;//need this
     public float playerJumpSpeed = 100f;
     //public static int power = 0;
     bool facingRight = true;
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, JumpLayer);//need this for tomorrow add to update
+
         if (Input.GetKey(KeyCode.A))
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
@@ -42,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector2.right * playerSpeed * Time.deltaTime);
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             //if (!playerCollider.IsTouchingLayers(JumpLayer))
             //if(!playerCollider.)

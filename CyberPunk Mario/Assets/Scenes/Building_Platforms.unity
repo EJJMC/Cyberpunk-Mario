@@ -4533,7 +4533,7 @@ MonoBehaviour:
   - {fileID: 1971770325}
   - {fileID: 1927136005}
   - {fileID: 183755732}
-  playerFullHeart: {fileID: 21300000, guid: 237e72592bc56354cb665a89c4539e4f, type: 3}
+  playerFullHeart: {fileID: 21300000, guid: c7453437314fc684bae98681c6b2aaf4, type: 3}
   playerEmptyHeart: {fileID: 21300000, guid: dab65428a07e4454d85af5288d93c324, type: 3}
 --- !u!114 &1072738758
 MonoBehaviour:

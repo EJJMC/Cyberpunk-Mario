@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     bool facingRight = true;
     bool Death = true;
    // public Collider 
+
+
+    // add animation code under here
+
+
    
 
 
@@ -31,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, JumpLayer);//need this for tomorrow add to update
 
         if (Input.GetKey(KeyCode.A))
@@ -48,11 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            //if (!playerCollider.IsTouchingLayers(JumpLayer))
-            //if(!playerCollider.)
-            //{
-               // return;
-           // }
+           
             Vector3 jumpVelocityToAdd = new Vector3(0f, playerJumpSpeed, 0f);
             PlayerRigidbody.velocity += jumpVelocityToAdd;
         }

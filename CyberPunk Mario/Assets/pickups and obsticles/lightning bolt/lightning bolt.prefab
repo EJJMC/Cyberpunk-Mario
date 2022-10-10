@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2394134205270117608}
   - component: {fileID: 494651769686341666}
   - component: {fileID: 1233087481816302409}
+  - component: {fileID: 393868742154867809}
   m_Layer: 0
   m_Name: lightning bolt
-  m_TagString: Untagged
+  m_TagString: Lighting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2152060201354893815}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.2102051, y: -2.9002686, z: 1.6639175}
   m_LocalScale: {x: 11.139953, y: 11.139953, z: 11.139953}
   m_ConstrainProportionsScale: 0
@@ -104,3 +105,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &393868742154867809
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152060201354893815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12754261, y: 0.2462757, z: 0.020476125}
+  m_Center: {x: -0.008652962, y: -0.024912823, z: 0.007493956}

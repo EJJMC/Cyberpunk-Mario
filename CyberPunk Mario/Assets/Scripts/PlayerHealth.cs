@@ -72,6 +72,15 @@ public class PlayerHealth : MonoBehaviour
             //healthBar.SetPlayerHealth(playerCurrentHealth);
             
         }
+
+        if (collision.gameObject.tag == "SawBlade")
+        {
+
+           
+            playerHealth -= 2;
+                              
+
+        }
     }
 
 }

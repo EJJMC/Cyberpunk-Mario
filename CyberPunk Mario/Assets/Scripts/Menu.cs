@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
 
     public void Gamelevel()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level 1");
     }
 
     public void ControlsMenu()
@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
     }
     public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Menu");
     }
 
     public void QuitTheGame()

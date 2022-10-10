@@ -8,6 +8,9 @@ TagManager:
   - NPCTurnLeft
   - DeathZone
   - Enemy
+  - Lighting
+  - Canister
+  - SawBlade
   layers:
   - Default
   - TransparentFX

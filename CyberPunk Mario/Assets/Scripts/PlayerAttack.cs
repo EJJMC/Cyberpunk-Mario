@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
 
-    public Collider2D Collider2D;
+    //public Collider Collider;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +17,9 @@ public class PlayerAttack : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter2D(Collider2D Collision)
+    void OnTriggerEnter(Collider Collision)
     {
-        if (Collision.gameObject.tag == "Enemy" && Collider2D.IsTouching(Collision))
+        if (Collision.gameObject.tag == "Enemy" )
         {
             Destroy(Collision.gameObject);
         }

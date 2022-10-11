@@ -59,10 +59,10 @@ MonoBehaviour:
     value: -82
   colorFilter:
     overrideState: 0
-    value: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
+    value: {r: 1, g: 0, b: 0, a: 1}
   hueShift:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -10
   saturation:
     overrideState: 1
     value: 16
@@ -1311,6 +1311,50 @@ MonoBehaviour:
       - 0.5
       - 0.5
       - 0.5
+--- !u!114 &-1537518144061401133
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  mode:
+    overrideState: 1
+    value: 0
+  color:
+    overrideState: 1
+    value: {r: 1, g: 0, b: 0, a: 1}
+  center:
+    overrideState: 1
+    value: {x: 0.5, y: 0.5}
+  intensity:
+    overrideState: 1
+    value: 0.227
+  smoothness:
+    overrideState: 1
+    value: 1
+  roundness:
+    overrideState: 0
+    value: 1
+  rounded:
+    overrideState: 0
+    value: 0
+  mask:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  opacity:
+    overrideState: 0
+    value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,6 +1372,7 @@ MonoBehaviour:
   - {fileID: -6127617181085054918}
   - {fileID: 4468084723118313398}
   - {fileID: 5362350521507791559}
+  - {fileID: -1537518144061401133}
 --- !u!114 &4468084723118313398
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1409,13 +1454,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2.25
+    value: 4.61
   threshold:
     overrideState: 1
-    value: 0.98
+    value: 1
   softKnee:
     overrideState: 1
-    value: 0.396
+    value: 0.483
   clamp:
     overrideState: 0
     value: 65471.77
@@ -1437,4 +1482,4 @@ MonoBehaviour:
     defaultState: 1
   dirtIntensity:
     overrideState: 0
-    value: 0
+    value: 1.68

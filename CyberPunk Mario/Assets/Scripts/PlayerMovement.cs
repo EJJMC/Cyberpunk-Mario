@@ -22,7 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     // add animation code under here
 
-    private Animator animator;
+    public Animator animator;
+    public bool characterMoving = true;
 
 
    
@@ -33,8 +34,8 @@ public class PlayerMovement : MonoBehaviour
         PlayerRigidbody = GetComponent<Rigidbody>();
         //power = 0;
         Death = false;
-
-        animator = GetComponent<Animator>();
+       // characterMoving = false;
+        animator = GetComponentInChildren<Animator>();
     }
 
 
@@ -49,23 +50,30 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector2.right * playerSpeed * Time.deltaTime);
             facingRight = false;
 
-            animator.SetBool("IsMoving",true);
+            animator.SetBool("IsMoving", true);
+           // characterMoving = true;
 
         }
+     
         if (Input.GetKey(KeyCode.D))
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             transform.Translate(Vector2.right * playerSpeed * Time.deltaTime);
 
             animator.SetBool("IsMoving", true);
+            //characterMoving = true;
         }
-
-        else
+      
+        if (Input.anyKey == false)
+        
         {
-            animator.SetBool("IsMoving",false);
+            animator.SetBool("IsMoving", false);
+            animator.SetBool("Jump", false);
+
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+
+        if (Input.GetButtonDown("Jump") && isGrounded )
         {
            
             Vector3 jumpVelocityToAdd = new Vector3(0f, playerJumpSpeed, 0f);
@@ -73,11 +81,10 @@ public class PlayerMovement : MonoBehaviour
 
             animator.SetBool("Jump",true) ;
         }
-
-        else
-        {
-            animator.SetBool("Jump",false) ;
-        }
+        //else
+       // {
+          // animator.SetBool("Jump",false) ;
+       // }
     }
 
     void PlayerFlip()

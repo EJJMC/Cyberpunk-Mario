@@ -26,4 +26,15 @@ public class PlayerAttack : MonoBehaviour
 
 
     }
+   
+   /* void OnCollisionEnter(Collision Collision)
+    {
+        if (Collision.gameObject.tag == "Enemy")
+        {
+            Destroy(Collision.gameObject);
+        }
+
+
+    }
+   */
 }

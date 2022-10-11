@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     // add animation code under here
 
+    private Animator animator;
+
 
    
 
@@ -31,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
         PlayerRigidbody = GetComponent<Rigidbody>();
         //power = 0;
         Death = false;
+
+        animator = GetComponent<Animator>();
     }
 
 
@@ -45,11 +49,20 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector2.right * playerSpeed * Time.deltaTime);
             facingRight = false;
 
+            animator.SetBool("IsMoving",true);
+
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             transform.Translate(Vector2.right * playerSpeed * Time.deltaTime);
+
+            animator.SetBool("IsMoving", true);
+        }
+
+        else
+        {
+            animator.SetBool("IsMoving",false);
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -57,6 +70,13 @@ public class PlayerMovement : MonoBehaviour
            
             Vector3 jumpVelocityToAdd = new Vector3(0f, playerJumpSpeed, 0f);
             PlayerRigidbody.velocity += jumpVelocityToAdd;
+
+            animator.SetBool("Jump",true) ;
+        }
+
+        else
+        {
+            animator.SetBool("Jump",false) ;
         }
     }
 

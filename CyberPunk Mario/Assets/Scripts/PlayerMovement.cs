@@ -50,8 +50,10 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector2.right * playerSpeed * Time.deltaTime);
             facingRight = false;
 
+            animator.SetBool("Jump", false);
+            animator.SetBool("Idle", false);
             animator.SetBool("IsMoving", true);
-           // characterMoving = true;
+            // characterMoving = true;
 
         }
      
@@ -60,26 +62,28 @@ public class PlayerMovement : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             transform.Translate(Vector2.right * playerSpeed * Time.deltaTime);
 
+            animator.SetBool("Jump", false);
+            animator.SetBool("Idle", false);
             animator.SetBool("IsMoving", true);
             //characterMoving = true;
         }
       
-        if (Input.anyKey == false)
-        
+        if (Input.anyKey == false)        
         {
             animator.SetBool("IsMoving", false);
             animator.SetBool("Jump", false);
-
+            animator.SetBool("Idle", true);
         }
 
 
         if (Input.GetButtonDown("Jump") && isGrounded )
-        {
-           
+        {           
             Vector3 jumpVelocityToAdd = new Vector3(0f, playerJumpSpeed, 0f);
             PlayerRigidbody.velocity += jumpVelocityToAdd;
 
-            animator.SetBool("Jump",true) ;
+            animator.SetBool("Idle", false);
+            animator.SetBool("IsMoving", false);
+            animator.SetBool("Jump",true);
         }
         //else
        // {

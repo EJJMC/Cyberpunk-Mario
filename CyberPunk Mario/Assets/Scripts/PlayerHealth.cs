@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -49,6 +50,11 @@ public class PlayerHealth : MonoBehaviour
                 playerHearts[i].enabled = false;
             }
         } 
+
+        if(playerHealth <= 0)
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
     
     public void OnCollisionEnter(Collision Collision)

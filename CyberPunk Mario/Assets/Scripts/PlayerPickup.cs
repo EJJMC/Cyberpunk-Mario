@@ -6,10 +6,11 @@ public class PlayerPickup : MonoBehaviour
 {
     public Timer timer;
     public Counter counter;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class PlayerPickup : MonoBehaviour
         {
             timer.cdRemainingTime += 1;
             counter.counter++;
+            audioSource.Play();
             Destroy(collision.gameObject);
         }
 
@@ -30,6 +32,7 @@ public class PlayerPickup : MonoBehaviour
         {
             timer.cdRemainingTime += 5;
             counter.counter++;
+            audioSource.Play();
             Destroy(collision.gameObject);
         }
 

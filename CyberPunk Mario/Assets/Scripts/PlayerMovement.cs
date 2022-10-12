@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -106,5 +107,13 @@ public class PlayerMovement : MonoBehaviour
            // SceneManager.LoadScene("Lose");
             Death = true;
         ///}
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "End")
+        {
+            SceneManager.LoadScene("you win");
+        }
     }
 }

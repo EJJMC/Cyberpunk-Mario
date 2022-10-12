@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class Timer : MonoBehaviour
             else
             {
                 cdRemainingTime = 0;
+                SceneManager.LoadScene("Menu");
                 cdTimeRunning = false;
             }
         }
